@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
   
-  <!-- Premium Google Fonts Integration for a WordPress Aesthetic -->
+  <!-- Premium Fonts from Original Theme Setup -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
 
   <style>
     /* ==========================================================================
-       CHANGING GEARS: UPGRADED MODERN WORDPRESS-STYLE FLUID LAYOUT
+       CHANGING GEARS: REPLICATED WORDPRESS-STYLE DESIGN
        ========================================================================== */
     html, body {
         margin: 0;
@@ -29,48 +29,39 @@
         box-sizing: inherit;
     }
 
-    h1, h2, h3, h4, h5, h6, .custom-nav a {
+    h1, h2, h3, h4, h5, h6, .custom-nav a, .sidebar-content h2 {
         font-family: 'Montserrat', sans-serif !important;
         color: #111111;
     }
 
-    /* Layout Container */
-    .wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-
-    /* Header Styling */
-    header {
+    /* --- Full Width Header Banner --- */
+    .header-banner-container {
+        width: 100%;
         background-color: #ffffff;
-        padding: 30px 0;
-        border-bottom: 1px solid #eef0ee;
         text-align: center;
+        border-bottom: 1px solid #eef0ee;
     }
 
-    header h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
+    .header-banner-container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
-    header h1 a {
-        text-decoration: none;
-        color: #111111;
-    }
-
-    /* Simple Navigation Links */
+    /* --- Navigation Bar --- */
     .custom-nav {
-        margin-top: 15px;
+        background-color: #ffffff;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #eef0ee;
     }
 
     .custom-nav a {
         text-decoration: none;
         color: #7f9c90;
         font-weight: 600;
-        margin: 0 15px;
+        margin: 0 20px;
         font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -81,13 +72,60 @@
         color: #00331D;
     }
 
-    /* Main Content Styling */
+    /* --- Main Split Grid Layout --- */
+    .main-container {
+        max-width: 1140px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 40px;
+    }
+
+    /* Main Content Area */
     main {
+        flex: 2;
         background-color: #ffffff;
         padding: 40px;
-        border-radius: 6px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-        margin-top: 30px;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+    }
+
+    /* --- Sidebar Area --- */
+    aside {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        height: fit-content;
+    }
+
+    .sidebar-profile {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .sidebar-profile img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid #f8faf8;
+    }
+
+    .sidebar-content h2 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #7f9c90;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar-content p {
+        font-size: 0.95rem;
+        color: #555555;
     }
 
     footer {
@@ -97,26 +135,49 @@
         color: #999999;
         font-family: 'Montserrat', sans-serif;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .main-container {
+            flex-direction: column;
+        }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-    <div class="custom-nav">
-      <a href="{{ site.baseurl }}/">Home</a>
-      <a href="{{ site.baseurl }}/future-plans/">Future Plans</a>
-    </div>
-  </header>
+  <!-- Replicated Header Image Banner -->
+  <div class="header-banner-container">
+    <a href="{{ site.baseurl }}/">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrF3V2zga7ASAJ63kwTsiP4SrGXuESeFPKpkqaaVmtBBnNt7ASiyFHG9wj3oq12Xsa5TvjAD1zEfTJAyy-aHNnnVY9eLHKFDc0WkGc0lXIHAJMQ1qFPcGmZEr2MMRQ9S91POcQ-3neMEsUJkaUkcVdS1vI9S4ahCdOVJE8Uw-xFrsS1duXLiqyIzW_-TSj/s1600/Changing%20Gears%20Header.jpg" alt="Changing Gears Banner">
+    </a>
+  </div>
 
-  <div class="wrapper">
+  <!-- Replicated Navigation Grid -->
+  <nav class="custom-nav">
+    <a href="{{ site.baseurl }}/">Home</a>
+    <a href="{{ site.baseurl }}/future-plans/">Future Plans</a>
+  </nav>
+
+  <!-- Content Split Layout -->
+  <div class="main-container">
     <main>
       {{ content }}
     </main>
+
+    <!-- Replicated About Sidebar -->
+    <aside class="sidebar-content">
+      <div class="sidebar-profile">
+        <!-- Replicated Profile Image -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVABf8RIJkau1dza5gOqhoffujvIy95eP0TrDCdSQaounVsjiAMLJC5WhKy-OZIZsl8ZDFiYcle8OEc_h9-Cxsa0uxi3ju-5TmgARmWEOiJqwIsHSaK5XL87BqQtd3vL6ABOtK8rpbS8zKyow065VhrA-OYHYy7IjZCqGz2BfufuszY02OCBTR6t6ync4H/s1600/Gemini_Generated_Image_5hkpx55hkpx55hkp.png" alt="About Us">
+      </div>
+      <h2>About Us</h2>
+      <p>Welcome to Changing Gears. We are documenting our journey as we prepare to transition out of full-time international teaching positions into early retirement, travel, and new recreational horizons by July 2027.</p>
+    </aside>
   </div>
 
   <footer>
-    &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Built with GitHub Pages.
+    &copy; {{ 'now' | date: "%Y" }} {{ site.title }}.
   </footer>
 
 </body>
