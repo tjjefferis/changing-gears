@@ -13,15 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "future-plans.md",
+                "file": "work-optional.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "future-plans"
+              "title": "work-optional.md"
+            }
+          },
+          {
+            "id": "1f13463b9b6f0fda",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,15 +195,17 @@
       "zk-prefixer:Create new unique note": false
     }
   },
-  "active": "75ea7d7a08f29f8b",
+  "active": "1f13463b9b6f0fda",
   "lastOpenFiles": [
+    "work-optional.md.md",
+    "future-plans.md",
+    "_posts/Untitled.md",
     "README.md",
     "_posts/2026-07-12-Test.md",
     "_posts/2026-07-12-Finances.md",
     "_posts/2026-07-10-Taking-the-Plunge.md",
     "_templates/Jekyll Post Template.md",
     "CNAME",
-    "_posts/Untitled.md",
     "_posts/Untitled 1.md",
     "_templates"
   ]
