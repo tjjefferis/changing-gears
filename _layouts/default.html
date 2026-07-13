@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
@@ -124,6 +124,11 @@
         box-shadow: 0 4px 20px rgba(0,0,0,0.01);
     }
 
+    main img {
+        max-width: 100%;
+        height: auto;
+    }
+
     aside {
         flex: 1;
         background-color: #ffffff;
@@ -161,6 +166,56 @@
     .sidebar-content p {
         font-size: 0.95rem;
         color: #555555;
+    }
+
+    /* --- Newsletter Subscription Box styling --- */
+    .newsletter-box {
+        margin-top: 35px;
+        padding-top: 5px;
+    }
+
+    .newsletter-box form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .newsletter-box input[type="email"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #eef0ee;
+        border-radius: 3px;
+        font-family: 'Lora', Georgia, serif;
+        font-size: 0.95rem;
+        color: #3c3c33;
+        background-color: #fafbfa;
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+
+    .newsletter-box input[type="email"]:focus {
+        border-color: #7f9c90;
+    }
+
+    .newsletter-submit-btn {
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #7f9c90;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 3px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .newsletter-submit-btn:hover {
+        background-color: #00331D;
     }
 
     /* Read More Buttons styling */
@@ -202,20 +257,24 @@
     @media (max-width: 768px) {
         .main-container {
             flex-direction: column;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        .custom-nav {
+            flex-direction: column;
+            text-align: center;
         }
         .dropdown {
             position: static;
             box-shadow: none;
-            padding-left: 20px;
+            padding-left: 0;
+            background-color: #fafbfa;
         }
     }
   </style>
-   <style>
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-</style>
 </head>
 <body>
 
@@ -225,11 +284,11 @@
     </a>
   </div>
 
- <!-- Unified Layout Navigation Menu Structure -->
+  <!-- Unified Layout Navigation Menu Structure -->
   <ul class="custom-nav">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/future-plans/">Future Plans</a></li>
-    <li><a href="{{ site.baseurl }}/work-optional/">Work Optional</a>
+    <li><a href="{{ site.baseurl }}/work-optional/">Work Optional</a></li>
     <li>
       <span class="nav-drop-title">Former Lives</span>
       <ul class="dropdown">
@@ -270,6 +329,16 @@
       </div>
       <h2>About Us</h2>
       <p>Welcome to Changing Gears. We are documenting our journey as we prepare to transition out of full-time teaching positions into early retirement, travel, and new recreational horizons.</p>
+
+      <!-- Newsletter Sign Up Section -->
+      <div class="newsletter-box">
+        <h2>Subscribe</h2>
+        <p>Sign up with your email address to receive updates directly when new posts go live.</p>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4pKbHdCZDCtPuVkmd8ubpYZg9FO05_YcXy-zms_N1txTwJA/formResponse" method="POST" target="_blank">
+          <input type="email" name="entry.796012332" placeholder="Your email address" required>
+          <button type="submit" class="newsletter-submit-btn">Subscribe</button>
+        </form>
+      </div>
     </aside>
   </div>
 
