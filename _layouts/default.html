@@ -25,7 +25,6 @@
         box-sizing: inherit;
     }
 
-    /* Standardised Header & Navigation Typography styling */
     h1, h2, h3, h4, h5, h6, .custom-nav a, .nav-drop-title, .sidebar-content h2 {
         font-family: 'Montserrat', sans-serif !important;
         color: #111111;
@@ -45,7 +44,6 @@
         margin: 0 auto;
     }
 
-    /* --- Advanced Dropdown Navigation Menu --- */
     .custom-nav {
         background-color: #ffffff;
         border-bottom: 1px solid #eef0ee;
@@ -79,7 +77,6 @@
         color: #00331D;
     }
 
-    /* Dropdown Menus */
     .dropdown {
         position: absolute;
         top: 100%;
@@ -106,7 +103,6 @@
         display: block;
     }
 
-    /* --- Layout Split --- */
     .main-container {
         max-width: 1140px;
         margin: 40px auto;
@@ -132,7 +128,6 @@
         height: fit-content;
     }
 
-    /* --- Square Sidebar Image Configuration --- */
     .sidebar-profile {
         text-align: center;
         margin-bottom: 30px;
@@ -162,7 +157,6 @@
         color: #555555;
     }
 
-    /* Read More Buttons styling */
     .read-more-btn {
         display: inline-block;
         margin-top: 15px;
@@ -181,6 +175,13 @@
 
     .read-more-btn:hover {
         background-color: #00331D;
+    }
+
+    /* Disqus Wrapper Spacing */
+    .comments-wrapper {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #eef0ee;
     }
 
     footer {
@@ -211,7 +212,6 @@
     </a>
   </div>
 
-  <!-- Unified Layout Navigation Menu Structure -->
   <ul class="custom-nav">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/future-plans/">Future Plans</a></li>
@@ -228,6 +228,27 @@
   <div class="main-container">
     <main>
       {{ content }}
+
+      <!-- Disqus Comments Component Execution -->
+      {% if page.layout == 'post' %}
+        <div class="comments-wrapper">
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = "{{ site.url }}{{ page.url }}";
+              this.page.identifier = "{{ page.id }}";
+            };
+            (function() {
+              var d = document, s = d.createElement('script');
+              // REPLACE 'your-disqus-shortname' BELOW WITH YOUR ACTUAL DISQUS SHORTNAME
+              s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      {% endif %}
     </main>
 
     <aside class="sidebar-content">
