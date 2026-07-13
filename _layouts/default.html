@@ -334,13 +334,16 @@
       <div class="newsletter-box">
         <h2>Subscribe</h2>
         <p>Sign up with your email address to receive updates directly when new posts go live.</p>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4pKbHdCZDCtPuVkmd8ubpYZg9FO05_YcXy-zms_N1txTwJA/formResponse" method="POST" target="_blank">
+        
+        <!-- Hidden iframe to handle the silent background submission -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='{{ site.baseurl }}/thank-you/';}"></iframe>
+        
+        <script type="text/javascript">var submitted=false;</script>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4pKbHdCZDCtPuVkmd8ubpYZg9FO05_YcXy-zms_N1txTwJA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
           <input type="email" name="entry.796012332" placeholder="Your email address" required>
           <button type="submit" class="newsletter-submit-btn">Subscribe</button>
         </form>
       </div>
-    </aside>
-  </div>
 
   <footer>
     &copy; {{ 'now' | date: "%Y" }} {{ site.title }}.
