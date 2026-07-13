@@ -3,3 +3,4 @@ description: Transitioning into early retirement, travel, and new adventures.
 baseurl: "/changing-gears"
 url: "https://tjjefferis.github.io"
 permalink: /:title/
+excerpt_separator: "<!--more-->"
