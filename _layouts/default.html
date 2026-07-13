@@ -300,6 +300,13 @@
 
   <div class="main-container">
     <main>
+      <!-- Automatic post date and estimated reading time for individual blog posts -->
+      {% if page.layout == 'post' %}
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: #999999; margin-bottom: 25px; border-bottom: 1px solid #eef0ee; padding-bottom: 15px;">
+          {{ page.date | date: "%B %d, %Y" }} <span style="color: #7f9c90; margin: 0 6px;">•</span> {{ page.content | number_of_words | divided_by: 180 | plus: 1 }} min read
+        </div>
+      {% endif %}
+
       {{ content }}
 
       <!-- Disqus Comments Component Execution -->
@@ -344,7 +351,8 @@
           <button type="submit" class="newsletter-submit-btn">Subscribe</button>
         </form>
       </div>
-<!-- Social Media Links -->
+
+      <!-- Social Media Links -->
       <div class="social-links-box" style="margin-top: 35px; padding-top: 5px; text-align: center;">
         <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #7f9c90; padding-bottom: 5px; margin-bottom: 15px; text-align: left;">Connect With Us</h2>
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
@@ -361,6 +369,9 @@
 
         </div>
       </div>
+    </aside>
+  </div>
+
   <footer>
     &copy; {{ 'now' | date: "%Y" }} {{ site.title }}.
   </footer>
