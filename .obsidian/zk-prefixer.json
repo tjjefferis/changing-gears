@@ -1,0 +1,5 @@
+{
+  "folder": "_posts",
+  "format": "YYYY-MM-DD-",
+  "template": "_templates/Jekyll Post Template"
+}
