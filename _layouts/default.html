@@ -25,7 +25,8 @@
         box-sizing: inherit;
     }
 
-    h1, h2, h3, h4, h5, h6, .custom-nav a, .sidebar-content h2 {
+    /* Standardised Header & Navigation Typography styling */
+    h1, h2, h3, h4, h5, h6, .custom-nav a, .nav-drop-title, .sidebar-content h2 {
         font-family: 'Montserrat', sans-serif !important;
         color: #111111;
     }
@@ -141,7 +142,7 @@
         width: 100%;
         max-width: 240px;
         height: auto;
-        border-radius: 0%; /* Forces exact square shape */
+        border-radius: 0%; 
         object-fit: cover;
         margin-bottom: 15px;
         border: 1px solid #eef0ee;
@@ -210,7 +211,7 @@
     </a>
   </div>
 
-  <!-- Replicated & Upgraded Navigation Menu Structure -->
+  <!-- Unified Layout Navigation Menu Structure -->
   <ul class="custom-nav">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/future-plans/">Future Plans</a></li>
