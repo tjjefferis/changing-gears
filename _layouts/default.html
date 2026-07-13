@@ -369,6 +369,20 @@
 
         </div>
       </div>
+
+      <!-- Recent Updates -->
+      <div class="recent-posts-box" style="margin-top: 35px; padding-top: 5px;">
+        <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #7f9c90; padding-bottom: 5px; margin-bottom: 15px;">Recent Updates</h2>
+        <ul style="list-style: none; padding: 0; margin: 15px 0 0 0;">
+          {% for post in site.posts limit:3 %}
+            <li style="margin-bottom: 15px; line-height: 1.4;">
+              <a href="{{ post.url | relative_url }}" style="color: #3c3c33; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#7f9c90'" onmouseout="this.style.color='#3c3c33'">{{ post.title }}</a>
+              <div style="font-size: 0.75rem; color: #999999; margin-top: 3px;">{{ post.date | date: "%B %d, %Y" }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
     </aside>
   </div>
 
