@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  
+  <!-- Premium Google Fonts Integration for a WordPress Aesthetic -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
 
+  <style>
+    /* ==========================================================================
+       CHANGING GEARS: UPGRADED MODERN WORDPRESS-STYLE FLUID LAYOUT
+       ========================================================================== */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: #f5f6f5 !important;
+        font-family: 'Lora', Georgia, serif !important;
+        color: #3c3c33;
+        line-height: 1.75;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    h1, h2, h3, h4, h5, h6, .custom-nav a {
+        font-family: 'Montserrat', sans-serif !important;
+        color: #111111;
+    }
+
+    /* Layout Container */
+    .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* Header Styling */
+    header {
+        background-color: #ffffff;
+        padding: 30px 0;
+        border-bottom: 1px solid #eef0ee;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    header h1 a {
+        text-decoration: none;
+        color: #111111;
+    }
+
+    /* Simple Navigation Links */
+    .custom-nav {
+        margin-top: 15px;
+    }
+
+    .custom-nav a {
+        text-decoration: none;
+        color: #7f9c90;
+        font-weight: 600;
+        margin: 0 15px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.2s ease;
+    }
+
+    .custom-nav a:hover {
+        color: #00331D;
+    }
+
+    /* Main Content Styling */
+    main {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 6px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        margin-top: 30px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px 0;
+        font-size: 0.85rem;
+        color: #999999;
+        font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <div class="custom-nav">
+      <a href="{{ site.baseurl }}/">Home</a>
+      <a href="{{ site.baseurl }}/future-plans/">Future Plans</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      {{ content }}
+    </main>
+  </div>
+
+  <footer>
+    &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Built with GitHub Pages.
+  </footer>
+
+</body>
+</html>
