@@ -25,6 +25,7 @@
         box-sizing: inherit;
     }
 
+    /* Standardised Header & Navigation Typography styling */
     h1, h2, h3, h4, h5, h6, .custom-nav a, .nav-drop-title, .sidebar-content h2 {
         font-family: 'Montserrat', sans-serif !important;
         color: #111111;
@@ -44,6 +45,7 @@
         margin: 0 auto;
     }
 
+    /* --- Advanced Dropdown Navigation Menu --- */
     .custom-nav {
         background-color: #ffffff;
         border-bottom: 1px solid #eef0ee;
@@ -77,6 +79,7 @@
         color: #00331D;
     }
 
+    /* Dropdown Menus */
     .dropdown {
         position: absolute;
         top: 100%;
@@ -103,6 +106,7 @@
         display: block;
     }
 
+    /* --- Layout Split --- */
     .main-container {
         max-width: 1140px;
         margin: 40px auto;
@@ -128,6 +132,7 @@
         height: fit-content;
     }
 
+    /* --- Square Sidebar Image Configuration --- */
     .sidebar-profile {
         text-align: center;
         margin-bottom: 30px;
@@ -157,6 +162,7 @@
         color: #555555;
     }
 
+    /* Read More Buttons styling */
     .read-more-btn {
         display: inline-block;
         margin-top: 15px;
@@ -212,6 +218,7 @@
     </a>
   </div>
 
+  <!-- Unified Layout Navigation Menu Structure -->
   <ul class="custom-nav">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/future-plans/">Future Plans</a></li>
@@ -240,8 +247,7 @@
             };
             (function() {
               var d = document, s = d.createElement('script');
-              // REPLACE 'your-disqus-shortname' BELOW WITH YOUR ACTUAL DISQUS SHORTNAME
-              s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+              s.src = 'https://changing-gears.disqus.com/embed.js';
               s.setAttribute('data-timestamp', +new Date());
               (d.head || d.body).appendChild(s);
             })();
