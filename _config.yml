@@ -4,3 +4,6 @@ baseurl: ""
 url: "https://changing-gears.com"
 permalink: /:title/
 excerpt_separator: "<!--more-->"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
